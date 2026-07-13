@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swateya Gupta - Portfolio</title>
+    <title>Swateya Gupta — Data Scientist · ML/AI Engineer · LLM & GenAI Researcher</title>
+    <meta name="description" content="Data Scientist and ML/AI Engineer specializing in RLHF, reward modeling, agentic AI, and production MLOps. IEEE-published RL researcher with client work spanning Google, Meta, Amazon, Nvidia, OpenAI & Anthropic engagements.">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -114,21 +115,56 @@
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 800px;
+            max-width: 860px;
         }
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: 4rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             animation: fadeInUp 1s ease;
         }
 
-        .hero p {
-            font-size: 1.5rem;
+        .hero .tagline {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.15s backwards;
+        }
+
+        .hero .subline {
+            font-size: 1.05rem;
+            font-weight: 300;
             margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease 0.2s backwards;
+            opacity: 0.85;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.3s backwards;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.25rem;
+            animation: fadeInUp 1s ease 0.45s backwards;
+        }
+
+        .stat-chip {
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 50px;
+            padding: 8px 18px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+        }
+
+        .stat-chip strong {
+            font-weight: 700;
         }
 
         .cta-buttons {
@@ -136,7 +172,7 @@
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeInUp 1s ease 0.4s backwards;
+            animation: fadeInUp 1s ease 0.6s backwards;
         }
 
         .btn {
@@ -181,6 +217,15 @@
             }
         }
 
+        @media (prefers-reduced-motion: reduce) {
+            .hero h1, .hero .tagline, .hero .subline, .hero-stats, .cta-buttons {
+                animation: none;
+            }
+            * {
+                transition: none !important;
+            }
+        }
+
         /* Sections */
         section {
             padding: 5rem 2rem;
@@ -211,7 +256,7 @@
         /* Position Section */
         .position-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr;
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -226,7 +271,7 @@
         }
 
         .position-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-6px);
             box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
         }
 
@@ -239,7 +284,7 @@
         .position-card .company {
             color: #764ba2;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
         }
 
         .position-card .duration {
@@ -251,6 +296,31 @@
         .position-card p {
             color: #666;
             line-height: 1.8;
+        }
+
+        .position-card ul {
+            list-style: none;
+            margin-top: 0.75rem;
+        }
+
+        .position-card li {
+            color: #666;
+            line-height: 1.8;
+            padding-left: 1.4rem;
+            position: relative;
+            margin-bottom: 0.6rem;
+        }
+
+        .position-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .position-card li strong {
+            color: #444;
         }
 
         /* Education Section */
@@ -304,6 +374,8 @@
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-header {
@@ -313,25 +385,52 @@
         }
 
         .project-header h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .project-header .project-sub {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 300;
         }
 
         .project-body {
             padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
 
         .project-body p {
             color: #666;
             margin-bottom: 1rem;
             line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .project-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .metric-pill {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            color: #764ba2;
+            border: 1px solid #764ba240;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
         }
 
         .tech-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin: 1rem 0;
+            margin: 0 0 1rem 0;
         }
 
         .tech-tag {
@@ -343,9 +442,64 @@
             font-weight: 500;
         }
 
+        .project-body .project-link {
+            margin-top: auto;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .project-body .project-link:hover {
+            color: #764ba2;
+        }
+
         .project-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .skill-group {
+            background: white;
+            padding: 1.75rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-top: 3px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .skill-group:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .skill-group h3 {
+            color: #764ba2;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-pill {
+            background: linear-gradient(135deg, #667eea12 0%, #764ba212 100%);
+            color: #555;
+            padding: 5px 13px;
+            border-radius: 20px;
+            font-size: 0.83rem;
+            font-weight: 500;
+            border: 1px solid #667eea25;
         }
 
         /* Publications Section */
@@ -387,11 +541,58 @@
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
+            margin-right: 1rem;
         }
 
         .publication-item a:hover {
             color: #e68900;
             text-decoration: underline;
+        }
+
+        /* Achievements Section */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .achievement-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-bottom: 4px solid #667eea;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.25);
+        }
+
+        .achievement-card .icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .achievement-card h3 {
+            color: #667eea;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-card p {
+            color: #666;
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        .achievement-card .year {
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
         }
 
         /* Contact Section */
@@ -446,16 +647,17 @@
         /* Responsive */
         @media (max-width: 768px) {
             nav ul {
-                gap: 1rem;
-                font-size: 0.9rem;
+                gap: 0.8rem;
+                font-size: 0.85rem;
+                flex-wrap: wrap;
             }
 
             .hero h1 {
                 font-size: 2.5rem;
             }
 
-            .hero p {
-                font-size: 1.1rem;
+            .hero .tagline {
+                font-size: 1.05rem;
             }
 
             section {
@@ -482,10 +684,12 @@
         <div class="logo">SG</div>
         <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#position">Position</a></li>
+            <li><a href="#position">Experience</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#publications">Publications</a></li>
+            <li><a href="#achievements">Achievements</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -494,7 +698,14 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Swateya Gupta</h1>
-            <p>Researcher • Developer • Innovator</p>
+            <p class="tagline">Data Scientist · ML/AI Engineer · LLM &amp; GenAI Researcher</p>
+            <p class="subline">RLHF · Reward Modeling · AI Alignment · Agentic AI · Production MLOps — building and evaluating the systems that make LLMs safe, honest, and useful.</p>
+            <div class="hero-stats">
+                <div class="stat-chip"><strong>2+ years</strong> across the full LLM lifecycle</div>
+                <div class="stat-chip"><strong>IEEE-published</strong> RL researcher</div>
+                <div class="stat-chip">Engagements for <strong>Google · Meta · Amazon · Nvidia · OpenAI · Anthropic</strong> via Turing</div>
+                <div class="stat-chip"><strong>GATE top 0.1%</strong> all-India</div>
+            </div>
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -506,23 +717,47 @@
     <section id="about">
         <h2>About Me</h2>
         <div style="text-align: center; margin-top: 2rem;">
-            <p style="font-size: 1.1rem; color: #666; max-width: 700px; margin: 0 auto; line-height: 1.8;">
-                I'm a passionate researcher and developer dedicated to innovation and continuous learning. 
-                With expertise in cutting-edge technologies, I create solutions that make a real impact. 
-                My journey spans across research, development, and entrepreneurial ventures.
+            <p style="font-size: 1.1rem; color: #666; max-width: 780px; margin: 0 auto; line-height: 1.9;">
+                I work at the intersection of <strong>ML research, engineering, and data science</strong> — with 2+ years spanning
+                the full LLM lifecycle: RLHF/SFT post-training and reward modeling on the research side, production RL
+                environments and evaluation tooling in Python on the engineering side, and benchmark design, A/B testing,
+                and statistical error analysis on the data-science side. I've contributed to engagements for
+                <strong>Google, Meta, Amazon, Nvidia, OpenAI &amp; Anthropic</strong> through Turing, and hold a research
+                master's from <strong>IIT Guwahati</strong>. I'm an IEEE-published researcher in reinforcement learning, and
+                I ship end-to-end: FastAPI services, Docker, MLflow, CI/CD, and full LLM stacks with PyTorch, QLoRA,
+                RAG, and LangGraph. My independent research focuses on <strong>reward hacking and AI alignment</strong> —
+                building testbeds that measure whether agents solve tasks or merely game the signals that measure them.
             </p>
         </div>
     </section>
 
-    <!-- Current Position -->
+    <!-- Experience -->
     <section id="position">
-        <h2>Current Position</h2>
+        <h2>Experience</h2>
         <div class="position-container">
             <div class="position-card">
-                <h3>📊 Your Current Role</h3>
-                <div class="company">Organization Name</div>
-                <div class="duration">Start Date - Present</div>
-                <p>Add your current responsibilities, achievements, and impact here. Describe what you're working on and your contributions to the organization.</p>
+                <h3>📊 Delivery Data Scientist</h3>
+                <div class="company">Turing — Palo Alto, CA (Remote) · Client engagements: Google, Meta, Amazon, Nvidia &amp; RL Gyms (OpenAI, Anthropic)</div>
+                <div class="duration">Jun 2024 – Jun 2026</div>
+                <ul>
+                    <li><strong>LLM Post-Training (RLHF/SFT):</strong> Designed and executed RLHF, supervised fine-tuning, and side-by-side (SXS) evaluation pipelines for post-training multimodal LLM agents (vision + text) across Google, Meta &amp; Amazon — improving model safety, reasoning accuracy, and instruction-following alignment.</li>
+                    <li><strong>Reward Modeling &amp; Preference Data:</strong> Produced and quality-controlled human preference data and golden responses for reward model training; engineered evaluation metrics and QA rubrics directly determining reward-signal fidelity and downstream model behaviour.</li>
+                    <li><strong>Model Evaluation &amp; Statistical Analysis:</strong> Evaluated and fine-tuned frontier models (Gemini, Claude, LLaMA, DeepSeek) via internal benchmark suites, A/B testing, and error analysis — converting failure-mode insights into curated fine-tuning datasets with measurable accuracy gains per release cycle.</li>
+                    <li><strong>RL Environments &amp; Production Tooling:</strong> Engineered production-grade RL Gym tooling in Python — evaluation harnesses, agents, verifiers/graders, and MCP-layer RL environments — powering SDLC agentic-task evaluation for OpenAI and Anthropic; performed agent trajectory analysis for scalable oversight and AI alignment.</li>
+                    <li><strong>Agentic AI Evaluation:</strong> Developed rubrics for Agentic AI Computer-Use SXS Evals (Google) and workflows generating multimodal computer-use eval data (Nvidia) — tool use, multi-step planning, and trajectory-level scoring of autonomous agents.</li>
+                    <li><strong>Prompt Engineering &amp; Red-Teaming:</strong> Authored adversarial, edge-case prompts to stress-test models, surfacing hallucinations, reward hacking, and safety failures converted into fine-tuning data.</li>
+                    <li><strong>Production Workflows &amp; Automation:</strong> Built Python automation and data pipelines for large-scale eval-data generation, validation, and delivery; containerized reproducible workflows with Docker, version-controlled via Git/GitHub.</li>
+                </ul>
+            </div>
+
+            <div class="position-card">
+                <h3>🔬 Research Intern — Deep Learning for Power Systems</h3>
+                <div class="company">IIT BHU (EEE Dept.) — Varanasi, India</div>
+                <div class="duration">Jan 2021 – Jul 2021</div>
+                <ul>
+                    <li>Simulated an IEEE-standard 9-Bus Power System in MATLAB/Simulink; engineered 8 key features (phase voltages/currents, zero-sequence voltage) characterizing fault conditions.</li>
+                    <li>Trained deep learning fault detection and classification models (MATLAB Deep Learning Toolbox), achieving reliable classification across multiple fault scenarios evaluated via MSE.</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -532,57 +767,177 @@
         <h2>Education</h2>
         <div class="education-container">
             <div class="education-card">
-                <h3>🎓 Your Degree</h3>
-                <div class="institution">University/Institution Name</div>
-                <p style="margin: 0.5rem 0; color: #666;">Field of Study</p>
-                <div class="year">Graduation Year</div>
+                <h3>🎓 Master of Science by Research (MSR)</h3>
+                <div class="institution">Indian Institute of Technology, Guwahati</div>
+                <p style="margin: 0.5rem 0; color: #666;">DMRR, Dept. of Computer Science &amp; Engineering</p>
+                <div class="year">2022 – 2024</div>
+            </div>
+            <div class="education-card">
+                <h3>🎓 B.Tech., Electrical Engineering</h3>
+                <div class="institution">Banasthali Vidyapith</div>
+                <p style="margin: 0.5rem 0; color: #666;">Electrical Engineering</p>
+                <div class="year">2017 – 2021</div>
             </div>
         </div>
     </section>
 
     <!-- Projects -->
     <section id="projects">
-        <h2>Current Projects</h2>
+        <h2>Featured Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-header">
-                    <h3>Project Name 1</h3>
+                    <h3>🔭 Reward Hacking Observatory</h3>
+                    <div class="project-sub">Empirical AI-safety testbed for agentic reward hacking</div>
                 </div>
                 <div class="project-body">
-                    <p>Describe your project here. What problem does it solve? What technologies are used?</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Technology</span>
-                        <span class="tech-tag">Technology</span>
+                    <p>A controlled experimental environment that empirically measures how LLM agents game naive reward signals. 30 tasks across 3 ambiguity levels, 16 MCP tools over a FastAPI + SQLite workspace, three reward functions (naive → intermediate → robust with ground-truth state verification), and a real-time detector for 5 hack types — revealing that reward hacking is ambiguity-driven and systematic.</p>
+                    <div class="project-metrics">
+                        <span class="metric-pill">51.7% overall hack rate detected</span>
+                        <span class="metric-pill">0% → 80% hacking as ambiguity rises</span>
+                        <span class="metric-pill">195+ tests incl. regression locks</span>
                     </div>
-                    <a href="#" style="color: #667eea; text-decoration: none; font-weight: 600;">Learn More →</a>
+                    <div class="tech-tags">
+                        <span class="tech-tag">MCP</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Anthropic SDK</span>
+                        <span class="tech-tag">Reward Design</span>
+                        <span class="tech-tag">AI Alignment</span>
+                    </div>
+                    <a class="project-link" href="https://github.com/Swateya03/reward-hacking-observatory" target="_blank" rel="noopener">View on GitHub →</a>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <h3>Project Name 2</h3>
+                    <h3>🎯 AgentRubric</h3>
+                    <div class="project-sub">Multi-agent RLHF rubric optimization &amp; reward-model training</div>
                 </div>
                 <div class="project-body">
-                    <p>Describe your project here. What problem does it solve? What technologies are used?</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Technology</span>
-                        <span class="tech-tag">Technology</span>
+                    <p>A LangGraph 7-node multi-agent system (transcript filter → gold judge → rubric designer → reward scorer → rubric critic → hack detector → preference store) that auto-generates preference pairs for reward-model training, detects proxy-vs-gold judge divergence to catch reward hacking, and fine-tunes Qwen2-1.5B via QLoRA on self-generated preference data — all on a 4GB-VRAM consumer GPU.</p>
+                    <div class="project-metrics">
+                        <span class="metric-pill">97.5% preference-pair success rate</span>
+                        <span class="metric-pill">33.5% MAE reduction vs baseline</span>
+                        <span class="metric-pill">Trained in 347s on RTX 3050</span>
                     </div>
-                    <a href="#" style="color: #667eea; text-decoration: none; font-weight: 600;">Learn More →</a>
+                    <div class="tech-tags">
+                        <span class="tech-tag">LangGraph</span>
+                        <span class="tech-tag">QLoRA</span>
+                        <span class="tech-tag">TRL</span>
+                        <span class="tech-tag">BM25 RAG</span>
+                        <span class="tech-tag">Reward Modeling</span>
+                    </div>
+                    <a class="project-link" href="https://github.com/Swateya03/Agent_Rubric" target="_blank" rel="noopener">View on GitHub →</a>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <h3>Project Name 3</h3>
+                    <h3>🛡️ FraudShield</h3>
+                    <div class="project-sub">Real-time ML fraud detection with a full automated MLOps loop</div>
                 </div>
                 <div class="project-body">
-                    <p>Describe your project here. What problem does it solve? What technologies are used?</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Technology</span>
-                        <span class="tech-tag">Technology</span>
+                    <p>Production-grade Card-Not-Present fraud detection API: XGBoost with Elkan-Noto PU Learning and SHAP explainability, Redis real-time velocity features, and a fully automated MLOps loop — PSI drift detection → challenger retraining → AUC-gated promotion → health-check auto-rollback — orchestrated via GitHub Actions and MLflow, observable through Prometheus, Grafana, and OpenTelemetry, with a live React analyst dashboard.</p>
+                    <div class="project-metrics">
+                        <span class="metric-pill">AUC-ROC 0.94 (PU vs 0.91 supervised)</span>
+                        <span class="metric-pill">&lt;200ms p99 latency SLA</span>
+                        <span class="metric-pill">Zero-downtime hot model reload</span>
                     </div>
-                    <a href="#" style="color: #667eea; text-decoration: none; font-weight: 600;">Learn More →</a>
+                    <div class="tech-tags">
+                        <span class="tech-tag">XGBoost</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">MLflow</span>
+                        <span class="tech-tag">Prometheus/Grafana</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                    <a class="project-link" href="https://github.com/Swateya03/fraudshield" target="_blank" rel="noopener">View on GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-group">
+                <h3>🤖 LLM &amp; GenAI</h3>
+                <div class="skill-pills">
+                    <span class="skill-pill">RLHF</span>
+                    <span class="skill-pill">SFT</span>
+                    <span class="skill-pill">Reward Modeling</span>
+                    <span class="skill-pill">Preference Optimization</span>
+                    <span class="skill-pill">QLoRA / LoRA / PEFT</span>
+                    <span class="skill-pill">LLM-as-a-Judge</span>
+                    <span class="skill-pill">SXS Evals</span>
+                    <span class="skill-pill">RAG (BM25, embeddings)</span>
+                    <span class="skill-pill">LangGraph / LangChain</span>
+                    <span class="skill-pill">MCP</span>
+                    <span class="skill-pill">Multi-Agent Systems</span>
+                    <span class="skill-pill">HF Transformers / TRL</span>
+                    <span class="skill-pill">Prompt Engineering</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h3>🎮 Reinforcement Learning</h3>
+                <div class="skill-pills">
+                    <span class="skill-pill">Q-Learning</span>
+                    <span class="skill-pill">Reward Function Design</span>
+                    <span class="skill-pill">Boltzmann Exploration</span>
+                    <span class="skill-pill">RL Environments / Gyms</span>
+                    <span class="skill-pill">Agent Trajectory Analysis</span>
+                    <span class="skill-pill">Verifiers / Graders</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h3>📈 Machine Learning &amp; Data Science</h3>
+                <div class="skill-pills">
+                    <span class="skill-pill">XGBoost</span>
+                    <span class="skill-pill">Regression / Classification</span>
+                    <span class="skill-pill">Feature Engineering</span>
+                    <span class="skill-pill">Fraud / Anomaly Detection</span>
+                    <span class="skill-pill">SHAP</span>
+                    <span class="skill-pill">A/B Testing</span>
+                    <span class="skill-pill">Statistical Analysis</span>
+                    <span class="skill-pill">AUC-ROC / F1 / KS</span>
+                    <span class="skill-pill">Pandas / NumPy / PySpark</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h3>🧠 Deep Learning &amp; NLP</h3>
+                <div class="skill-pills">
+                    <span class="skill-pill">PyTorch</span>
+                    <span class="skill-pill">TensorFlow / Keras</span>
+                    <span class="skill-pill">Transformers / BERT</span>
+                    <span class="skill-pill">CNN / RNN / LSTM</span>
+                    <span class="skill-pill">Fine-tuning</span>
+                    <span class="skill-pill">Scikit-learn</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h3>⚙️ MLOps &amp; Production</h3>
+                <div class="skill-pills">
+                    <span class="skill-pill">Docker</span>
+                    <span class="skill-pill">GitHub Actions CI/CD</span>
+                    <span class="skill-pill">MLflow Registry</span>
+                    <span class="skill-pill">Drift Detection (PSI)</span>
+                    <span class="skill-pill">Prometheus / Grafana</span>
+                    <span class="skill-pill">OpenTelemetry</span>
+                    <span class="skill-pill">FastAPI / REST</span>
+                    <span class="skill-pill">Redis</span>
+                    <span class="skill-pill">Champion/Challenger + Auto-Rollback</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h3>💻 Languages &amp; Cloud</h3>
+                <div class="skill-pills">
+                    <span class="skill-pill">Python (advanced)</span>
+                    <span class="skill-pill">SQL (MySQL, PostgreSQL)</span>
+                    <span class="skill-pill">C / C++</span>
+                    <span class="skill-pill">Bash / Linux</span>
+                    <span class="skill-pill">AWS (S3, EC2, SageMaker)</span>
+                    <span class="skill-pill">GCP (Vertex AI)</span>
                 </div>
             </div>
         </div>
@@ -592,11 +947,37 @@
     <section id="publications">
         <h2>Publications</h2>
         <div class="publication-item">
-            <h3>BUFD-Q</h3>
-            <div class="authors">Your Name, Co-authors</div>
-            <div class="details"><strong>Published:</strong> Year | <strong>Journal/Conference:</strong> Name</div>
-            <p style="margin: 1rem 0; color: #666;">Brief description of your publication, its findings, and impact.</p>
-            <a href="#">Read Publication →</a>
+            <h3>BUFD-Q: Boltzmann-Guided Q-Learning for Optimized 3D UAV Deployment in Flood-Affected Wireless Networks</h3>
+            <div class="authors">Swateya Gupta, et al.</div>
+            <div class="details"><strong>Published:</strong> 2026 | <strong>Conference:</strong> IEEE COMSNETS 2026</div>
+            <p style="margin: 1rem 0; color: #666;">Proposed BUFD-Q, a centralized Q-learning framework with Boltzmann exploration for adaptive 3D UAV base-station deployment in post-flood 5G networks — applying reinforcement learning to restore wireless connectivity in disaster-affected regions.</p>
+            <a href="https://ieeexplore.ieee.org" target="_blank" rel="noopener">IEEE Xplore →</a>
+            <a href="https://github.com/Swateya03" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements">
+        <h2>Achievements &amp; Leadership</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <div class="icon">🏆</div>
+                <h3>GATE (EEE) — Top 0.1% All-India</h3>
+                <p>Ranked in the top 0.1% nationwide in India's national graduate engineering examination.</p>
+                <div class="year">2022</div>
+            </div>
+            <div class="achievement-card">
+                <div class="icon">🗳️</div>
+                <h3>Hostel General Secretary, IIT Guwahati</h3>
+                <p>Elected by 500+ residents; led a team of 6 secretaries and organized 50+ events.</p>
+                <div class="year">2023 – 2024</div>
+            </div>
+            <div class="achievement-card">
+                <div class="icon">🏅</div>
+                <h3>Inter-Hostel Spardha Medals</h3>
+                <p>Bronze in Badminton and Silver in Football at IIT Guwahati's inter-hostel sports championship.</p>
+                <div class="year">2024</div>
+            </div>
         </div>
     </section>
 
@@ -604,19 +985,18 @@
     <section id="contact">
         <h2>Get In Touch</h2>
         <div class="contact-container">
-            <p>I'm always interested in collaborating on exciting projects and discussing innovative ideas.</p>
+            <p>Open to roles in Data Science, ML/AI Engineering, and LLM research — and always interested in collaborating on alignment, RLHF, and agentic-AI problems.</p>
             <div class="contact-links">
-                <a href="mailto:your.email@example.com" class="contact-link">📧 Email</a>
-                <a href="https://github.com/Swateya03" class="contact-link">🐙 GitHub</a>
-                <a href="#" class="contact-link">💼 LinkedIn</a>
-                <a href="#" class="contact-link">🐦 Twitter</a>
+                <a href="mailto:swatsumi326@gmail.com" class="contact-link">📧 swatsumi326@gmail.com</a>
+                <a href="https://github.com/Swateya03" class="contact-link" target="_blank" rel="noopener">🐙 GitHub</a>
+                <a href="https://linkedin.com/in/swateya-gupta" class="contact-link" target="_blank" rel="noopener">💼 LinkedIn</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Swateya Gupta. All rights reserved.</p>
+        <p>&copy; 2026 Swateya Gupta. All rights reserved.</p>
     </footer>
 </body>
 </html>
