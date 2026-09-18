@@ -21,4 +21,4 @@ This portfolio is built with GitHub Pages and showcases my journey as a research
 
 **Visit:** https://Swateya03.github.io
 
-**Last Updated:** 2024
+**Last Updated:** 2026
